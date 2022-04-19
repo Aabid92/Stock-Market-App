@@ -144,7 +144,21 @@ elif choose == "Technical View":
 
        
     technical()
+    
+    
+elif choose == "Mutual Fund":
+    def news():
+        st.header("This is Market News")
+        st.write("Coming Soon Feature")
 
+        
+        
+    news()
+    
+    
+    
+    
+    
 elif choose == "Market News":
     def news():
         st.header("This is Market News")
