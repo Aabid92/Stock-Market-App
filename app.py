@@ -148,7 +148,7 @@ elif choose == "Technical View":
     
 elif choose == "Mutual Fund":
     def news():
-        st.header("This is Market News")
+        st.header("This is Mutual Fund")
         st.write("Coming Soon Feature")
 
         
