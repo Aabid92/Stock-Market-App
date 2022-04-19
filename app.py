@@ -12,6 +12,8 @@ import numpy as np
 from PIL import Image
 import cufflinks as cf
 
+
+
 image = Image.open('main.png')
 st.image(image)
 
