@@ -164,6 +164,8 @@ elif choose == "Market News":
         st.header("This is Market News")
         st.write("Coming Soon Feature")
 
+        st.write("For Test")
+
         
         
     news()
