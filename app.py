@@ -128,6 +128,7 @@ elif choose == "Technical View":
         st.write("## Volume History of Stocks")
         st.line_chart(tickerDf.Volume)
 
+        st.header("Select Ticker for Technical Analysis")
         option3 = st.selectbox('', stock_tickers)
         tickerDf = yf.download(option3, start = start_date, end= end_date)
         
