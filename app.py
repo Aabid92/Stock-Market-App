@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
 import cufflinks as cf
-# for Testing
+
 
 
 image = Image.open('main.png')
@@ -163,8 +163,6 @@ elif choose == "Market News":
     def news():
         st.header("This is Market News")
         st.write("Coming Soon Feature")
-
-        st.write("For Test")
 
         
         
