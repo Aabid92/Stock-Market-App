@@ -128,7 +128,7 @@ elif choose == "Technical View":
         st.write("## Volume History of Stocks")
         st.line_chart(tickerDf.Volume)
 
-        option3 = st.selectbox('# Select Stock for Technical Index', stock_tickers)
+        option3 = st.selectbox('', stock_tickers)
         tickerDf = yf.download(option3, start = start_date, end= end_date)
         
          # .................Bollinger bands....................
