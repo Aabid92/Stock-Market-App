@@ -17,28 +17,28 @@ import cufflinks as cf
 image = Image.open('main.png')
 st.image(image)
 
-# with st.sidebar:
-#     choose = option_menu("Main Menu", ["Home", "Technical View", "Mutual Fund", "Market News"],
-#                         orientation= 'horizontal',
-#                         menu_icon="app-indicator", default_index=0,
-#                         styles={
-#         "container": {"padding": "5!important", "background-color": "#474747"},
-#         "nav-link": {"font-size": "12px", "text-align": "left", "margin":"0px", "--hover-color": "#000000"},
-#         "nav-link-selected": {"background-color": "#2e54ff"},
-#     }
-#     )
-
-
-
-choose = option_menu("Main Menu", ["Home", "Technical View", "Mutual Fund", "Market News"],
-                    orientation= 'horizontal',
-                    menu_icon="app-indicator", default_index=0,
-                    styles={
+with st.sidebar:
+    choose = option_menu("Main Menu", ["Home", "Technical View", "Mutual Fund", "Market News"],
+                        orientation= 'horizontal',
+                        menu_icon="app-indicator", default_index=0,
+                        styles={
         "container": {"padding": "5!important", "background-color": "#474747"},
         "nav-link": {"font-size": "12px", "text-align": "left", "margin":"0px", "--hover-color": "#000000"},
         "nav-link-selected": {"background-color": "#2e54ff"},
     }
-)
+    )
+
+
+
+# choose = option_menu("Main Menu", ["Home", "Technical View", "Mutual Fund", "Market News"],
+#                     orientation= 'horizontal',
+#                     menu_icon="app-indicator", default_index=0,
+#                     styles={
+#         "container": {"padding": "5!important", "background-color": "#474747"},
+#         "nav-link": {"font-size": "12px", "text-align": "left", "margin":"0px", "--hover-color": "#000000"},
+#         "nav-link-selected": {"background-color": "#2e54ff"},
+#     }
+# )
 
 if choose == "Home":
     
@@ -140,7 +140,7 @@ elif choose == "Technical View":
         st.plotly_chart(fig)
         st.write('---')
 
-        # ................Relative Strenth Index RSI................
+        # ................Relative Strength Index RSI................
         st.header("Relative Strength Index(RSI)")
         df=cf.QuantFig(tickerDf, title='RSI', legend='top', name='CS')
         df.add_rsi()
