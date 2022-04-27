@@ -46,7 +46,7 @@ if choose == "Home":
     def stock_data():
     
         # ......................Dating Code Here.................
-        
+
         today = datetime.date.today()
         before = today - datetime.timedelta(days=700)
         start_date = st.sidebar.date_input('Start date', before)
@@ -119,14 +119,14 @@ elif choose == "Technical View":
         tickerDf = yf.download(Option2, start = start_date, end= end_date)
 
         
-        st.write("## Closing and Opening Price Comparison")
+        st.write("### Closing and Opening Price Comparison")
 
        # .....................Open Close Comparision........................
         st.line_chart(tickerDf.Open)
         st.line_chart(tickerDf.Close)
 
        # ....................Volume of the Stock............................ 
-        st.write("## Volume History of Stocks")
+        st.write("### Volume History of Stocks")
         st.line_chart(tickerDf.Volume)
 
         st.header("Select Ticker for Technical Analysis")
