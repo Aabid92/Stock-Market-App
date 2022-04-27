@@ -158,7 +158,8 @@ elif choose == "Technical View":
 
         # Ticker_info = yf.download(option3)
         # st.write(Ticker_info.info)
-
+        tickerDf.institutional_holders
+        
 
        
     technical()
