@@ -45,7 +45,8 @@ if choose == "Home":
     Option = st.sidebar.selectbox('Select Stock', (stock_tickers))
     def stock_data():
     
-
+        # ......................Dating Code Here.................
+        
         today = datetime.date.today()
         before = today - datetime.timedelta(days=700)
         start_date = st.sidebar.date_input('Start date', before)
