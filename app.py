@@ -157,7 +157,7 @@ elif choose == "Technical View":
         st.plotly_chart(fig)
 
         Ticker_info = yf.Ticker(tickerDf)
-        st.write(Ticker_info)
+        st.write(Ticker_info.info)
 
 
        
