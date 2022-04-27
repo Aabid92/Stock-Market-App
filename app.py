@@ -156,6 +156,10 @@ elif choose == "Technical View":
         fig = df.iplot(asFigure=True)
         st.plotly_chart(fig)
 
+        Ticker_info = yf.Ticker(tickerDf)
+        st.write(Ticker_info)
+
+
        
     technical()
     
