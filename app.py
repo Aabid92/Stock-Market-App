@@ -181,6 +181,9 @@ elif choose == "Technical View":
         df.cashflow
         st.write("----")
 
+        st.write("### Major Holders")
+        df.major_holders
+        st.write("----")
         st.write("### Institutional Holders of Company")
         df.institutional_holders
         st.write("----")
