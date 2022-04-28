@@ -28,7 +28,7 @@ with st.sidebar:
     }
     )
 
-
+# ........................For On Header Menu Style...............................
 
 # choose = option_menu("Main Menu", ["Home", "Technical View", "Mutual Fund", "Market News"],
 #                     orientation= 'horizontal',
@@ -139,29 +139,76 @@ elif choose == "Technical View":
         qf.add_bollinger_bands()
         fig = qf.iplot(asFigure=True)
         st.plotly_chart(fig)
-        st.write('---')
+        st.write("##### The Bollinger Bands are a type of price envelope developed by John Bollinger. They are envelopes plotted at a standard deviation level above and below a simple moving average of the price. Because the distance of the bands is based on standard deviation, they adjust to volatility swings in the underlying price. Bollinger bands help determine whether prices are high or low on a relative basis. They are used in pairs, both upper and lower bands and in conjunction with a moving average")
 
         # ................Relative Strength Index RSI................
+        st.write("------")
         st.header("Relative Strength Index(RSI)")
         df=cf.QuantFig(tickerDf, title='RSI', legend='top', name='CS')
         df.add_rsi()
         fig = df.iplot(asFigure=True)
         st.plotly_chart(fig)
-        # st.write('----')
+        st.write("##### Introduced by Welles Wilder Jr. in his seminal 1978 book “New Concepts in Technical Trading Systems”, the relative strength index (RSI) becomes a popular momentum indicator. It measures the magnitude of recent price changes to evaluate overbought or oversold conditions. It is displayed as an oscillator and can have a reading from 0 to 100.  ▶️ RSI >= 70: a security is overbought or overvalued and may be primed for a trend reversal or corrective pullback in price. ▶️ RSI <= 30: an oversold or undervalued condition.")
+
 
         #  ...................Moving Average Convergence Divergence......................
+        st.write("------")
         st.header("Moving Average Convergence Divergence(MACD)")
         df=cf.QuantFig(tickerDf, title='MACD', legend='top', name='CS')
         df.add_macd()
         fig = df.iplot(asFigure=True)
         st.plotly_chart(fig)
+        st.write("##### The MACD was developed by Gerald Appel and is probably the most popular price oscillator. It can be used as a generic oscillator for any univariate series, not only price. Typically MACD is set as the difference between the 12-period simple moving average (SMA) and 26-period simple moving average (MACD = 12-period SMA − 26-period SMA), or “fast SMA — slow SMA”, The MACD has a positive value whenever the 12-period SMA is above the 26-period SMA and a negative value when the 12-period SMA is below the 26-period SMA. The more distant the MACD is above or below its baseline indicates that the distance between the two SMAs is growing.")
+        st.write("-----")
 
-        # Ticker_info = yf.download(tickerDf)
-        # st.write(Ticker_info.info)
-        # # tickerDf.institutional_holders
+        
+        # .........................Showing Company Fundamental Data Here.................
+        st.write("### Fundamentals Data of Company(Like, Balance Sheet, Income Statement, Cashflow,Holdings etc...)")
+        
+        
+        df = yf.Ticker(option3)
 
+        st.write("----")
+        st.write("### Income Statement of Company")
+        df.financials
+        st.write("----")
 
-       
+        st.write("### Balance Sheet Of Company")
+        df.balance_sheet
+        st.write("----")
+
+        st.write("### Cashflow Of Company")
+        df.cashflow
+        st.write("----")
+
+        st.write("### Institutional Holders of Company")
+        df.institutional_holders
+        st.write("----")
+
+        st.write("### Mutual Fund Holding of Company")
+        df._mutualfund_holders
+        st.write("----")
+
+        st.write("### Analysis Of Company")
+        df.analysis
+        st.write("----")
+
+        st.write("### Action Of Company")
+        df.actions
+        st.write("----")
+
+        st.write("### Earning Of Company")
+        df.earnings
+        st.write("----")
+
+        st.write("### Calender of Company")
+        df.calendar
+        st.write("----")
+
+        st.write("### Dividents Yied History of Company")
+        df.dividends
+        st.write("----")
+          
     technical()
     
     
@@ -174,9 +221,7 @@ elif choose == "Mutual Fund":
         
     news()
     
-    
-    
-    
+   
     
 elif choose == "Market News":
     def news():
