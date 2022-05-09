@@ -18,7 +18,7 @@ image = Image.open('main.png')
 st.image(image)
 
 with st.sidebar:
-    choose = option_menu("Main Menu", ["Home", "Technical View", "Mutual Fund", "Market News"],
+    choose = option_menu("Main Menu", ["Home", "Technical Analysis", "Mutual Fund", "Market News"],
                         # orientation= 'horizontal',
                         menu_icon="app-indicator", default_index=0,
                         styles={
