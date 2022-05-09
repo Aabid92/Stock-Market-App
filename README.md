@@ -9,6 +9,8 @@
 
 ## It Support Some of important Technical Charts like Bollinger Band, Relative Strength Index(RSI), Moving Average Convergence Divergence(MACD) etc.
 
+## It Show Companies Fundamentals Data like Income Statements, Balance Sheets, Cashflow, Holdings etc.
+
 
 
 
