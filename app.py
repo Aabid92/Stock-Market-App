@@ -97,7 +97,7 @@ if choose == "Home":
     
     
     #........................Technical Data Analysis Here.............................   
-elif choose == "Technical View":
+elif choose == "Technical Analysis":
     def technical():
         
         Option2 = st.sidebar.multiselect("Select Multiple Stocks",stock_tickers, 'WIPRO.BO')
