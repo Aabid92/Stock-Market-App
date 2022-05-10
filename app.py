@@ -18,11 +18,11 @@ image = Image.open('main.png')
 st.image(image)
 
 with st.sidebar:
-    choose = option_menu("Main Menu", ["Home", "Technical Analysis", "Mutual Fund", "Market News"],
+    choose = option_menu("Main Menu", ["Home", "Technical View", "Mutual Fund", "Market News"],
                         # orientation= 'horizontal',
                         menu_icon="app-indicator", default_index=0,
                         styles={
-        "container": {"padding": "5!important", "background-color": "#33305e"},
+        "container": {"padding": "5!important", "background-color": "#474747"},
         "nav-link": {"font-size": "12px", "text-align": "left", "margin":"0px", "--hover-color": "#000000"},
         "nav-link-selected": {"background-color": "#2e54ff"},
     }
@@ -97,7 +97,7 @@ if choose == "Home":
     
     
     #........................Technical Data Analysis Here.............................   
-elif choose == "Technical Analysis":
+elif choose == "Technical View":
     def technical():
         
         Option2 = st.sidebar.multiselect("Select Multiple Stocks",stock_tickers, 'WIPRO.BO')
