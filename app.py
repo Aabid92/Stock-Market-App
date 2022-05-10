@@ -20,10 +20,10 @@ st.image(image)
 with st.sidebar:
     choose = option_menu("Main Menu", ["Home", "Technical View", "Mutual Fund", "Market News"],
                         # orientation= 'horizontal',
-                        menu_icon="app-indicator", default_index=0,
+                        default_index=0,
                         styles={
         "container": {"padding": "5!important", "background-color": "F2F2F2"},
-        "nav-link": {"font-size": "12px", "text-align": "left", "margin":"0px", "--hover-color": "#03045E","font-color":"#D82148"},
+        "nav-link": {"font-size": "12px", "text-align": "left", "margin":"0px", "--hover-color": "#03045E"},
         "nav-link-selected": {"background-color": "#2e54ff"}, ##2e54ff
     }
     )
