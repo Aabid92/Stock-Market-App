@@ -22,7 +22,7 @@ with st.sidebar:
                         # orientation= 'horizontal',
                         menu_icon="app-indicator", default_index=0,
                         styles={
-        "container": {"padding": "5!important", "background-color": "#474747"},
+        "container": {"padding": "5!important", "background-color": "#33305e"},
         "nav-link": {"font-size": "12px", "text-align": "left", "margin":"0px", "--hover-color": "#000000"},
         "nav-link-selected": {"background-color": "#2e54ff"},
     }
@@ -176,6 +176,7 @@ elif choose == "Technical View":
         st.write("### Balance Sheet Of Company")
         df.balance_sheet
         st.write("----")
+        
 
         st.write("### Cashflow Of Company")
         df.cashflow
@@ -211,6 +212,8 @@ elif choose == "Technical View":
         st.write("### Dividents Yied History of Company")
         df.dividends
         st.write("----")
+        
+
           
     technical()
     
