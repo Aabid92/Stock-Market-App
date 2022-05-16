@@ -40,6 +40,7 @@ with st.sidebar:
 #     }
 # )
 
+
 if choose == "Home":
     
     Option = st.sidebar.selectbox('Select Stock', (stock_tickers))
@@ -56,11 +57,17 @@ if choose == "Home":
         else:
             st.sidebar.error('Error: End date must fall after start date.')
 
+        #...................Getting Companies Names By Its Ticker.......................
+        def companies_name():
+            co_name = yf.Ticker(Option)
+            name = co_name.info['longName']
+            st.header(name)    
+
         # tickerDf = tickerData.history(start=start_date, end=end_date')
         tickerDf = yf.download(Option, start = start_date, end= end_date)
 
 
-
+        companies_name()
         st.write("### Opening Price of Stock")
         st.line_chart(tickerDf.Open)
 
@@ -94,6 +101,8 @@ if choose == "Home":
         st.line_chart(tickerDf.Dividends)   
     else:
         st.write("Click Button to See Devidents") 
+
+        
     
     
     #........................Technical Data Analysis Here.............................   
@@ -111,6 +120,8 @@ elif choose == "Technical View":
         else:
             st.sidebar.error('Error: End date must fall after start date.')
 
+
+
         st.header("Technical Analysis")
 
         st.write("### Select Multiple Tickers from dropdown to Start")
@@ -118,7 +129,7 @@ elif choose == "Technical View":
 
         tickerDf = yf.download(Option2, start = start_date, end= end_date)
 
-        
+                        
         st.write("### Closing and Opening Price Comparison")
 
        # .....................Open Close Comparision........................
@@ -133,9 +144,16 @@ elif choose == "Technical View":
         option3 = st.selectbox('', stock_tickers)
         tickerDf = yf.download(option3, start = start_date, end= end_date)
         
+        #...................Getting Companies Names By Its Ticker.......................
+        def companies_name():
+            co_name = yf.Ticker(option3)
+            name = co_name.info['longName']
+            st.header(name)     
+
          # .................Bollinger bands....................
-        st.header('**Bollinger Bands**')
-        qf=cf.QuantFig(tickerDf, title='First Quant Figure', legend='top', name='CS')
+        companies_name()
+        st.header('**Bollinger Band**')
+        qf = cf.QuantFig(tickerDf, title='First Quant Figure', legend='top', name='CS')
         qf.add_bollinger_bands()
         fig = qf.iplot(asFigure=True)
         st.plotly_chart(fig)
@@ -144,7 +162,7 @@ elif choose == "Technical View":
         # ................Relative Strength Index RSI................
         st.write("------")
         st.header("Relative Strength Index(RSI)")
-        df=cf.QuantFig(tickerDf, title='RSI', legend='top', name='CS')
+        df = cf.QuantFig(tickerDf, title='RSI', legend='top', name='CS')
         df.add_rsi()
         fig = df.iplot(asFigure=True)
         st.plotly_chart(fig)
@@ -154,7 +172,7 @@ elif choose == "Technical View":
         #  ...................Moving Average Convergence Divergence......................
         st.write("------")
         st.header("Moving Average Convergence Divergence(MACD)")
-        df=cf.QuantFig(tickerDf, title='MACD', legend='top', name='CS')
+        df = cf.QuantFig(tickerDf, title='MACD', legend='top', name='CS')
         df.add_macd()
         fig = df.iplot(asFigure=True)
         st.plotly_chart(fig)
@@ -185,6 +203,7 @@ elif choose == "Technical View":
         st.write("### Major Holders")
         df.major_holders
         st.write("----")
+
         st.write("### Institutional Holders of Company")
         df.institutional_holders
         st.write("----")
@@ -240,4 +259,4 @@ elif choose == "Market News":
     news()
 
     
-st.write("Developed with❤️ By Aabid Shaikh")
+st.write("Develope with❤️ By Aabid Shaikh")
