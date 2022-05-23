@@ -87,20 +87,21 @@ if choose == "Home":
 
     stock_data()
 
-# ..........................Showing Devidents of Companies Here.....................................
+# ..........................Showing Dividend of Companies Here.....................................
+ 
 
     col1, col2 = st.columns(2)
     with col1:
-        d_button = st.button('Show Devidents')
+        d_button = st.button('Show Dividend')
     with col2:    
-        h_button  = st.button('Hide Devidents')
+        h_button  = st.button('Hide Dividend')
     if d_button == True:
         tickerData = yf.Ticker(Option)
         tickerDf = tickerData.history(start='2005-01-01', end='2022-04-01')
-        st.write("### Devidends Given By Company to its Shareholders")
+        st.write("### Dividend Given By Company to its Shareholders")
         st.line_chart(tickerDf.Dividends)   
     else:
-        st.write("Click Button to See Devidents") 
+        st.write("Click Button to See Dividend") 
 
         
     
@@ -228,7 +229,7 @@ elif choose == "Technical View":
         df.calendar
         st.write("----")
 
-        st.write("### Dividents Yied History of Company")
+        st.write("### Dividend Yied History of Company")
         df.dividends
         st.write("----")
         
