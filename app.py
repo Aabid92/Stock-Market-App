@@ -17,10 +17,15 @@ import cufflinks as cf
 
 
 
-
-
+image1 = Image.open('icon.png')
+st.set_page_config(page_title="Stock Market Analysis", page_icon= image1)
 image = Image.open('main.png')
 st.image(image)
+
+
+
+
+
 
 with st.sidebar:
     choose = option_menu("Main Menu", ["Home", "Technical View", "Mutual Fund", "Market News"],
