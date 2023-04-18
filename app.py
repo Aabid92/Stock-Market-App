@@ -3,9 +3,9 @@ from email.mime import image
 from urllib.parse import scheme_chars
 import streamlit as st
 from optparse import Option
-from tracemalloc import start
+# from tracemalloc import start
 import yfinance as yf 
-import pandas as pd
+# import pandas as pd
 from tickers import stock_tickers
 import datetime
 from streamlit_option_menu import option_menu 
